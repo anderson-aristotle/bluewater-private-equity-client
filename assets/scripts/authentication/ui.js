@@ -2,9 +2,15 @@
 const store = require('../store')
 
 const onSignUpSuccess = function (data) {
-  $('#message').text('Signed up successfully')
-  $('#message').removeClass()
-  $('#message').addClass('success')
+  setTimeout(() => {
+    $('#message').text('Signed up successfully')
+    $('#message').removeClass()
+    $('#message').addClass('success')
+  }, 3000)
+  setTimeout(() => {
+    $('#authenication').hide()
+    $('#personal-equity').show()
+  })
 }
 
 const onSignUpFailure = function () {

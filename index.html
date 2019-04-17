@@ -57,8 +57,44 @@
         <button id="sign-out-button" class="btn btn-danger text-uppercase" type="submit">Sign-Out</button>
       </form>
     </div>
+
+    <div id="create-account-form">
+      <!-- Create Investment -->
+      <h5>Invest</h5>
+      <form action="">
+        <input name="account[name]" type="text">
+        <input name="account[amount]" type="number">
+        <button class="btn btn-danger text-uppercase">Invest</button>
+      </form>
+    </div>
+
+    <div id="update-account-form">
+      <!-- Update Investments -->
+      <h5>Re-Invest</h5>
+      <form action="">
+        <input name=account[id] type="number">
+        <input name=account[name] type="text">
+        <input name=account[amount] type="number">
+          <button class="btn btn-danger text-uppercase">Update Investment</button>
+      </form>
+    </div>
+
+      <!-- Show Accounts -->
+    <form id="read-account-form">
+      <button class="btn btn-danger text-uppercase" type="submit">Portfolio</button>
+    </form>
+    <div id="display"></div>
+      <!-- Delete Account -->
+      <div id="delete-account-form">
+        <h5>Close Account</h5>
+          <form action="">
+            <button class="btn btn-danger text-uppercase">Close Account</button>
+          </form>
+      </div>
   </div>
   <div id="message"></div>
+
+
 </body>
 
 </html>

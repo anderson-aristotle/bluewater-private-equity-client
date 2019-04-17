@@ -19,23 +19,21 @@
     <!--Authenication -->
     <div id="authenication">
       <!-- Sign-Up -->
-      <div>
-        <h4>Sign-Up</h4>
-        <form action="sign-up-form">
-          <input type="text" placeholder="Email">
-          <input type="text" placeholder="Password">
-          <input type="text" placeholder="Confirm Password">
-          <input class="btn btn-primary" type="submit" value="Submit">
-        </form>
-      </div>
+      <h4>Sign-Up</h4>
+      <form id="sign-up-form">
+        <input name="credentials[email]" class="form-control" type="email" placeholder="Email">
+        <input name="credentials[password]" class="form-control" type="password" placeholder="Password">
+        <input name="credentials[password_confirmation]" class="form-control" type="password" placeholder="Confirm Password">
+        <button id="sign-up-button" class="btn btn-danger text-uppercase" type="submit">Sign-Up</button>
+      </form>
 
       <!-- Sign-In-->
       <div>
         <h4>Sign-In</h4>
-        <form action="sign-in-form">
-          <input type="text" placeholder="Email">
-          <input type="text" placeholder="Password">
-          <input class="btn btn-primary" type="submit" value="Submit">
+        <form id="sign-in-form">
+          <input name="credentials[email]" class="form-control" type="email" placeholder="Email">
+          <input name="credentials[password]" class="form-control" type="password" placeholder="Password">
+          <button id="sign-in-button" class="btn btn-danger text-uppercase" type="submit">Sign-In</button>
         </form>
       </div>
     </div>
@@ -46,20 +44,21 @@
     <h2>Personal Equity Page</h2>
     <div>
       <h4>Change Password</h4>
-      <form action="change-password-form">
-        <input type="text" placeholder="Old Password">
-        <input type="text" placeholder="New Password">
-        <input class="btn btn-primary" type="submit" value="Submit">
+      <form id="change-password-form">
+        <input name="passwords[old]" class="form-control" type="password" placeholder="Password">
+        <input name="passwords[new]" class="form-control" type="password" placeholder="Password Confirmation">
+        <button id="change-password-button" class="btn btn-danger text-uppercase" type="submit">Change Password</button>
       </form>
     </div>
 
     <!-- Sign-Out-->
     <div>
-      <form action="">
-        <input class="btn btn-primary" type="submit" value="Submit">
+      <form id="sign-out-form" action="">
+        <button id="sign-out-button" class="btn btn-danger text-uppercase" type="submit">Sign-Out</button>
       </form>
     </div>
   </div>
-  <div id=message></div>
-  </body>
+  <div id="message"></div>
+</body>
+
 </html>

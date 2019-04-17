@@ -22,8 +22,6 @@ const signInSuccess = function (data) {
     $('#authenication').hide()
   }, 2000)
   $('#personal-equity').show()
-  // $('#message').removeClass()
-  // $('#message').addClass('success')
 }
 
 const signInFailure = function (error) {
@@ -49,10 +47,11 @@ const changePasswordFailure = function (error) {
 
 const signOutSuccess = function () {
   $('#message').text('Signed out successfully')
-  $('#message').removeClass()
-  $('#message').addClass('success')
-  $('form').trigger('reset')
-  console.log('signOutSuccess ran and nothing was returned!')
+  setTimeout(() => {
+    $('#message').text('')
+    $('#personal-equity').hide()
+  }, 1000)
+  $('#authenication').show()
   store.user = null
 }
 

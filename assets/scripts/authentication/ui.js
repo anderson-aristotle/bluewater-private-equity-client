@@ -2,15 +2,9 @@
 const store = require('../store')
 
 const onSignUpSuccess = function (data) {
-  setTimeout(() => {
-    $('#message').text('Signed up successfully')
-    $('#message').removeClass()
-    $('#message').addClass('success')
-  }, 3000)
-  setTimeout(() => {
-    $('#authenication').hide()
-    $('#personal-equity').show()
-  })
+  $('#message').text('Signed up successfully')
+  $('#message').removeClass()
+  $('#message').addClass('success')
 }
 
 const onSignUpFailure = function () {
@@ -21,10 +15,15 @@ const onSignUpFailure = function () {
 
 const signInSuccess = function (data) {
   $('#message').text('Signed in successfully')
-  $('#message').removeClass()
-  $('#message').addClass('success')
-  console.log('signInSuccess ran. Data is :', data)
   store.user = data.user
+  setTimeout(() => {
+    $('form').trigger('reset')
+    $('#message').text('')
+    $('#authenication').hide()
+  }, 2000)
+  $('#personal-equity').show()
+  // $('#message').removeClass()
+  // $('#message').addClass('success')
 }
 
 const signInFailure = function (error) {

@@ -4,7 +4,7 @@ const accountEvents = require('./accounts/events.js')
 
 $(() => {
   // Hide and Show
-  // $('#personal-equity').hide()
+  $('#personal-equity').hide()
 
   // Authentication
   $('#sign-up-form').on('submit', authEvents.onSignUp)

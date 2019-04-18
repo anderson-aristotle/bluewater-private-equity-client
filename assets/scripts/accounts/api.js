@@ -24,15 +24,21 @@ const onGetAccounts = function () {
   })
 }
 
-const onUpdateAccount = function (formData) {
+const onUpdateAccount = function (formData, id) {
   console.log('Step 1')
+  console.log(formData)
   return $.ajax({
-    url: config.apiUrl + `/accounts/${formData.id}`,
+    url: config.apiUrl + `/accounts/${id}`,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: formData
+    data: {
+      account: {
+        name: formData.name,
+        amount: formData.amount
+      }
+    }
   })
 }
 

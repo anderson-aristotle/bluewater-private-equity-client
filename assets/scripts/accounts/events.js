@@ -24,7 +24,7 @@ const onUpdateAccount = function (event) {
   const id = $(event.target).data('id')
   const formData = getFormFields(event.target)
   $('.content' + id).hide()
-  api.onUpdateAccount(formData)
+  api.onUpdateAccount(formData, id)
     .then(ui.onUpdateAccountSuccess)
     .then(data => onGetAccounts(event))
     .catch(ui.onUpdateAccountFailure)

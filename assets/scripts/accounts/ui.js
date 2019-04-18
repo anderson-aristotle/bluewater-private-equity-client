@@ -50,7 +50,6 @@ const onGetAccountsFailure = () => {
 }
 
 const onUpdateAccountSuccess = (responseData) => {
-  console.log('Step 3')
   $('#user-message').html('Account Updated!')
   setTimeout(function () {
     $('#user-message').text('')
@@ -68,7 +67,6 @@ const onUpdateAccountFailure = () => {
 }
 
 const onDeleteAccountSuccess = (data) => {
-  console.log('This better work too!')
   $('#user-message').html('ENTRY DELETED')
   setTimeout(function () {
     $('#user-message').text('')
@@ -76,7 +74,6 @@ const onDeleteAccountSuccess = (data) => {
 }
 
 const onDeleteAccountFailure = (data) => {
-  console.log('This better work!')
   $('#user-message').text('Failed to delete Bucket list Item! :( Please try again.')
   setTimeout(function () {
     $('#user-message').text('')

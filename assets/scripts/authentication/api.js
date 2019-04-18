@@ -7,7 +7,6 @@ const signUp = function (data) {
     url: config.apiUrl + '/sign-up',
     method: 'POST',
     data
-    // data: data
   })
 }
 
@@ -16,7 +15,6 @@ const signIn = function (data) {
     url: config.apiUrl + '/sign-in',
     method: 'POST',
     data
-    // data: data
   })
 }
 
@@ -31,7 +29,6 @@ const signOut = function () {
 }
 
 const changePassword = function (data) {
-  console.log('data is ', data)
   return $.ajax({
     url: config.apiUrl + '/change-password',
     method: 'PATCH',
@@ -39,7 +36,6 @@ const changePassword = function (data) {
       Authorization: 'Token token=' + store.user.token
     },
     data
-    // data: data
   })
 }
 

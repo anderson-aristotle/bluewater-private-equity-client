@@ -2,11 +2,13 @@
 const store = require('../store')
 
 const onSignUpSuccess = function (data) {
+  $('form').trigger('reset')
   $('#message').text('Signed up successfully')
 }
 
 const onSignUpFailure = function () {
   $('#message').text('Error on sign up')
+  $('form').trigger('reset')
 }
 
 const signInSuccess = function (data) {
@@ -22,14 +24,20 @@ const signInSuccess = function (data) {
 
 const signInFailure = function () {
   $('#message').text('Error on sign in')
+  $('form').trigger('reset')
 }
 
 const changePasswordSuccess = function () {
   $('#message').text('Changed password successfully')
+  setTimeout(() => {
+    $('form').trigger('reset')
+    $('#message').text('')
+  }, 2000)
 }
 
 const changePasswordFailure = function () {
   $('#message').text('Error on change password')
+  $('form').trigger('reset')
 }
 
 const signOutSuccess = function () {
@@ -42,11 +50,8 @@ const signOutSuccess = function () {
   store.user = null
 }
 
-const signOutFailure = function (error) {
+const signOutFailure = function () {
   $('#message').text('Error on sign out')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
-  console.error('signOutFailure ran. Error is :', error)
 }
 
 module.exports = {

@@ -19,7 +19,6 @@ const onGetAccounts = function (event) {
 }
 
 const onUpdateAccount = function (event) {
-  console.log('Step 2')
   event.preventDefault()
   const id = $(event.target).data('id')
   const formData = getFormFields(event.target)
@@ -32,8 +31,6 @@ const onUpdateAccount = function (event) {
 
 const onDeleteAccount = function (event) {
   event.preventDefault()
-  console.log('I wonder!')
-  // target individual account for deletion
   const accountId = $(event.target).data('id')
   api.onDeleteAccount(accountId)
     .then(() => onGetAccounts(event))

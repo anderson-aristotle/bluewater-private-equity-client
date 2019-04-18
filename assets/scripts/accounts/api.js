@@ -3,7 +3,6 @@ const config = require('../config.js')
 const store = require('../store.js')
 
 const onCreateAccount = function (formData) {
-  console.log(formData)
   return $.ajax({
     url: config.apiUrl + '/accounts',
     method: 'POST',
@@ -25,8 +24,6 @@ const onGetAccounts = function () {
 }
 
 const onUpdateAccount = function (formData, id) {
-  console.log('Step 1')
-  console.log(formData)
   return $.ajax({
     url: config.apiUrl + `/accounts/${id}`,
     method: 'PATCH',
@@ -43,7 +40,6 @@ const onUpdateAccount = function (formData, id) {
 }
 
 const onDeleteAccount = function (id) {
-  console.log('id', id)
   return $.ajax({
     url: config.apiUrl + '/accounts/' + `${id}`,
     method: 'DELETE',

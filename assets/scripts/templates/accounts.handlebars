@@ -1,0 +1,19 @@
+{{#each accounts as |account|}}
+{{log account}}
+
+<section class="account">
+  {{account.name}}
+  {{account.amount}}
+
+  <form class="" action="index.html" method="post">
+    <input type="text" name="" value="">
+    <input type="text" name="" value="">
+    <button class="btn btn-danger" data-id="{{account.id}}">Update</button>
+  </form>
+
+  <form class="" action="index.html" method="post">
+    <button class="btn btn-danger" data-id="{{account.id}}">Delete</button>
+  </form>
+</section>
+
+{{/each}}

@@ -8,14 +8,15 @@ const onCreateAccount = (event) => {
   const formData = getFormFields(event.target)
   api.onCreateAccount(formData)
     .then(ui.onCreateAccountSuccess)
-    // .then(() => { onGetAccounts() })
     .catch(ui.onCreateAccountFailure)
 }
 
 const onGetAccounts = function () {
+  event.preventDefault()
   api.onGetAccounts()
     .then(ui.onGetAccountsSuccess)
-    .then($('#get-accounts').toggle())
+    .then(() => { onGetAccounts() })
+    // .then($('#read-account-form'))
     .catch(ui.onGetAccountsFailure)
 }
 
@@ -30,10 +31,12 @@ const onUpdateAccount = function (event) {
     .catch(ui.onUpdateAccountFailure)
 }
 
-const onDeleteAccount = function () {
+const onDeleteAccount = function (id) {
   event.preventDefault()
+  console.log('I wonder!')
+  // target individual account for deletion
   const accountId = $(event.target).data('id')
-  $('#all' + accountId).hide()
+  $('.content' + accountId).show()
   api.onDeleteAccount(accountId)
     .then(ui.onDeleteAccountSuccess)
     .catch(ui.onDeleteAccountFailure)
@@ -41,7 +44,7 @@ const onDeleteAccount = function () {
 
 const onShowAccount = () => {
   event.preventDefault()
-  // api.onGetAccounts()
+  api.onGetAccounts()
     .then()
     .cathc()
 }
@@ -50,6 +53,7 @@ const showUpdateForm = function (event) {
   const accountId = $(event.target).data('id')
   $('#' + accountId).toggle()
 }
+
 module.exports = {
   onCreateAccount,
   onGetAccounts,

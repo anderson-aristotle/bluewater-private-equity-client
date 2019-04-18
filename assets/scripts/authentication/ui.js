@@ -3,14 +3,10 @@ const store = require('../store')
 
 const onSignUpSuccess = function (data) {
   $('#message').text('Signed up successfully')
-  $('#message').removeClass()
-  $('#message').addClass('success')
 }
 
 const onSignUpFailure = function () {
   $('#message').text('Error on sign up')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
 }
 
 const signInSuccess = function (data) {
@@ -24,25 +20,16 @@ const signInSuccess = function (data) {
   $('#personal-equity').show()
 }
 
-const signInFailure = function (error) {
+const signInFailure = function () {
   $('#message').text('Error on sign in')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
-  console.error('signInFailure ran. Error is :', error)
 }
 
 const changePasswordSuccess = function () {
   $('#message').text('Changed password successfully')
-  $('#message').removeClass()
-  $('#message').addClass('success')
-  console.log('changePasswordSuccess ran and nothing was returned!')
 }
 
-const changePasswordFailure = function (error) {
+const changePasswordFailure = function () {
   $('#message').text('Error on change password')
-  $('#message').removeClass()
-  $('#message').addClass('failure')
-  console.error('changePasswordFailure ran. Error is :', error)
 }
 
 const signOutSuccess = function () {

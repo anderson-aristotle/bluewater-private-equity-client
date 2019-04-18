@@ -1,24 +1,23 @@
 'use strict'
 
 const store = require('../store.js')
-// const formatAccounts = require('../templates/accounts.handlebars')
+const showAccountTemplate = require('../templates/accounts.handlebars')
 
 const showOwnership = () => {
   $(`.my-account[data-owner=${store.user._id}]`).show()
 }
 
 const onCreateAccountSuccess = (responseData) => {
-  console.log(responseData)
   $('#display').empty()
   $('#user-message').text('You have successfully added an account!')
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
   const accounts = responseData.account
-  const userHtml = `<p>
+  const userHtml = `<ul>
       Name: ${accounts.name}
       Amount: ${accounts.amount}
-      </p>`
+      </ul>`
   $('#display').append(userHtml)
   $('form').trigger('reset')
 }
@@ -33,18 +32,13 @@ const onCreateAccountFailure = () => {
 
 const onGetAccountsSuccess = (responseData) => {
   const accounts = responseData.accounts
+  const showAccountsHTML = showAccountTemplate({ accounts: responseData.accounts })
+  $('.content').append(showAccountsHTML)
   $('#display').empty()
-  // const formattedAccounts = formatAccounts({accounts: store.accounts})
-  // $('#get-accounts').html(formattedAccounts)
   for (let i = 0; i < accounts.length; i++) {
-    const userHtml = (`
-      Name: ${accounts[i].name}
-      Amount: ${accounts[i].amount}
-      `)
-    $('#display').append(userHtml)
+    $('form').trigger('reset')
+    showOwnership()
   }
-  $('form').trigger('reset')
-  showOwnership()
 }
 
 const onGetAccountsFailure = () => {
@@ -74,6 +68,7 @@ const onUpdateAccountFailure = () => {
 }
 
 const onDeleteAccountSuccess = () => {
+  console.log('This better work too!')
   $('#user-message').html('ENTRY DELETED')
   setTimeout(function () {
     $('#user-message').text('')
@@ -81,6 +76,7 @@ const onDeleteAccountSuccess = () => {
 }
 
 const onDeleteAccountFailure = () => {
+  console.log('This better work!')
   $('#user-message').text('Failed to delete Bucket list Item! :( Please try again.')
   setTimeout(function () {
     $('#user-message').text('')

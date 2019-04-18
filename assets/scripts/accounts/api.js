@@ -36,6 +36,7 @@ const onUpdateAccount = function (formData) {
 }
 
 const onDeleteAccount = function (id) {
+  console.log('id')
   return $.ajax({
     url: config.apiUrl + '/accounts/' + `${id}`,
     method: 'DELETE',

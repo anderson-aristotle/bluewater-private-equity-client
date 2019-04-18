@@ -11,13 +11,12 @@ const onCreateAccount = (event) => {
     .catch(ui.onCreateAccountFailure)
 }
 
-const onGetAccounts = function () {
+const onGetAccounts = function (event) {
   event.preventDefault()
   api.onGetAccounts()
     .then(ui.onGetAccountsSuccess)
-    .then(() => { onGetAccounts() })
-    // .then($('#read-account-form'))
     .catch(ui.onGetAccountsFailure)
+    // .then($('#read-account-form'))
 }
 
 const onUpdateAccount = function (event) {
@@ -27,22 +26,22 @@ const onUpdateAccount = function (event) {
   $('#all' + id).hide()
   api.onUpdateAccount(formData)
     .then(ui.onUpdateAccountSuccess)
-    .then(onGetAccounts)
+    .then(data => onGetAccounts(event))
+    // .then(onGetAccounts)
     .catch(ui.onUpdateAccountFailure)
 }
 
-const onDeleteAccount = function (id) {
+const onDeleteAccount = function (event) {
   event.preventDefault()
   console.log('I wonder!')
   // target individual account for deletion
   const accountId = $(event.target).data('id')
-  $('.content' + accountId).show()
   api.onDeleteAccount(accountId)
-    .then(ui.onDeleteAccountSuccess)
+    .then(() => onGetAccounts(event))
     .catch(ui.onDeleteAccountFailure)
 }
 
-const onShowAccount = () => {
+const onShowAccount = (event) => {
   event.preventDefault()
   api.onGetAccounts()
     .then()

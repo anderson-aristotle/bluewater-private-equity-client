@@ -33,7 +33,7 @@ const onCreateAccountFailure = () => {
 const onGetAccountsSuccess = (responseData) => {
   const accounts = responseData.accounts
   const showAccountsHTML = showAccountTemplate({ accounts: responseData.accounts })
-  $('.content').append(showAccountsHTML)
+  $('.content').html(showAccountsHTML)
   $('#display').empty()
   for (let i = 0; i < accounts.length; i++) {
     $('form').trigger('reset')
@@ -67,7 +67,7 @@ const onUpdateAccountFailure = () => {
   $('form').trigger('reset')
 }
 
-const onDeleteAccountSuccess = () => {
+const onDeleteAccountSuccess = (data) => {
   console.log('This better work too!')
   $('#user-message').html('ENTRY DELETED')
   setTimeout(function () {
@@ -75,7 +75,7 @@ const onDeleteAccountSuccess = () => {
   }, 2000)
 }
 
-const onDeleteAccountFailure = () => {
+const onDeleteAccountFailure = (data) => {
   console.log('This better work!')
   $('#user-message').text('Failed to delete Bucket list Item! :( Please try again.')
   setTimeout(function () {

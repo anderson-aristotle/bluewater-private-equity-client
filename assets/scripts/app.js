@@ -15,6 +15,6 @@ $(() => {
   // Investment Account
   $('#create-account-form').on('submit', accountEvents.onCreateAccount)
   $('#read-account-form').on('submit', accountEvents.onGetAccounts)
-  $('#update-account-form').on('submit', accountEvents.onUpdateAccount)
-  $('.content').on('submit', accountEvents.onDeleteAccount)
+  $('.content').on('submit', '#update-account-form', accountEvents.onUpdateAccount)
+  $('.content').on('submit', '#delete-account-button', accountEvents.onDeleteAccount)
 })

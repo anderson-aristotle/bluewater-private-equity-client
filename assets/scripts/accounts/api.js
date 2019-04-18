@@ -25,6 +25,7 @@ const onGetAccounts = function () {
 }
 
 const onUpdateAccount = function (formData) {
+  console.log('Step 1')
   return $.ajax({
     url: config.apiUrl + `/accounts/${formData.id}`,
     method: 'PATCH',

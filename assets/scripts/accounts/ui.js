@@ -50,8 +50,8 @@ const onGetAccountsFailure = () => {
 }
 
 const onUpdateAccountSuccess = (responseData) => {
+  console.log('Step 3')
   $('#user-message').html('Account Updated!')
-  $('.list-item').trigger('reset')
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)

@@ -16,18 +16,17 @@ const onGetAccounts = function (event) {
   api.onGetAccounts()
     .then(ui.onGetAccountsSuccess)
     .catch(ui.onGetAccountsFailure)
-    // .then($('#read-account-form'))
 }
 
 const onUpdateAccount = function (event) {
+  console.log('Step 2')
   event.preventDefault()
   const id = $(event.target).data('id')
   const formData = getFormFields(event.target)
-  $('#all' + id).hide()
+  $('.content' + id).hide()
   api.onUpdateAccount(formData)
     .then(ui.onUpdateAccountSuccess)
     .then(data => onGetAccounts(event))
-    // .then(onGetAccounts)
     .catch(ui.onUpdateAccountFailure)
 }
 

@@ -33,6 +33,9 @@ Bluewater, Private Equity
 ## Entity Relationship Diagram
 - [Bluewater, Private Equity](https://imgur.com/akcGLyD)
 
+## Landing Page
+- [Screen Shot](https://imgur.com/qa5xqJs)
+
 ## Technology
 
 -   Ajax

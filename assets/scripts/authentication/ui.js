@@ -6,14 +6,14 @@ const onSignUpSuccess = function (data) {
   $('#message').text('Signed up successfully')
   setTimeout(() => {
     $('#message').text('Signed up successfully')
-  }, 1000)
+  }, 2000)
 }
 
 const onSignUpFailure = function () {
   $('#message').text('Error on sign up')
   $('form').trigger('reset')
   setTimeout(() => {
-    $('#message').text('Error on sign up').hide()
+    $('#message').text('Error on sign up').text('')
   }, 1000)
 }
 
@@ -30,10 +30,10 @@ const signInSuccess = function (data) {
 
 const signInFailure = function () {
   $('#message').text('Error on sign in')
-  $('form').trigger('reset')
   setTimeout(() => {
-    $('#message').text('Error on sign in').hide()
+    $('#message').text('Error on sign in').text('')
   }, 1000)
+  $('form').trigger('reset')
 }
 
 const changePasswordSuccess = function () {
@@ -46,7 +46,10 @@ const changePasswordSuccess = function () {
 
 const changePasswordFailure = function () {
   $('#message').text('Error on change password')
-  $('form').trigger('reset')
+  setTimeout(() => {
+    $('form').trigger('reset')
+    $('#message').text('Error on change password').text('')
+  }, 1000)
 }
 
 const signOutSuccess = function () {
@@ -54,13 +57,9 @@ const signOutSuccess = function () {
   setTimeout(() => {
     $('#message').text('')
     $('#personal-equity').hide()
-  }, 1000)
+  }, 2000)
   $('#authenication').show()
   store.user = null
-}
-
-const signOutFailure = function () {
-  $('#message').text('Error on sign out')
 }
 
 module.exports = {
@@ -69,7 +68,6 @@ module.exports = {
   signInSuccess,
   signInFailure,
   signOutSuccess,
-  signOutFailure,
   changePasswordSuccess,
   changePasswordFailure
 }

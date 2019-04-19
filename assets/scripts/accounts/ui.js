@@ -59,11 +59,10 @@ const onUpdateAccountSuccess = (responseData) => {
 
 const onUpdateAccountFailure = () => {
   $('#user-message').text('Failed to update Bucket list Item! :( Please try again.')
-  $('.list-item').trigger('reset')
+  $('form').trigger('reset')
   setTimeout(function () {
     $('#user-message').text('')
   }, 2000)
-  $('form').trigger('reset')
 }
 
 const onDeleteAccountSuccess = (data) => {

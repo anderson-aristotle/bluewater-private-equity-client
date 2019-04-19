@@ -18,10 +18,10 @@
     <!--Authenication -->
     <div id="authenication">
       <nav class="navbar navbar-inverse">
-        <h2>Marketing</h2>
+        <h2>Bluewater</h2>
         <!-- Sign-Up -->
-        <h4>Sign-Up</h4>
         <form id="sign-up-form">
+          <h4>Sign-Up</h4>
           <input name="credentials[email]" class="form-control" type="email" placeholder="Email">
           <input name="credentials[password]" class="form-control" type="password" placeholder="Password">
           <input name="credentials[password_confirmation]" class="form-control" type="password" placeholder="Confirm Password">
@@ -44,22 +44,24 @@
   <!--Change Password-->
   <div id="personal-equity">
     <h2>Personal Equity</h2>
-    <div>
-      <nav class="navbar navbar-inverse">
-        <h4>Change Password</h4>
-        <form id="change-password-form">
-          <input name="passwords[old]" class="form-control" type="password" placeholder="Old Password">
-          <input name="passwords[new]" class="form-control" type="password" placeholder="New Password">
-          <button id="change-password-button" class="btn btn-danger text-uppercase" type="submit">Change Password</button>
-        </form>
-    </div>
+    <div class="d-flex">
+      <div class="ml-auto">
+        <nav class="navbar navbar-inverse p-0 my-2">
+          <form id="change-password-form" class="p-0">
+            <h4>Change Password</h4>
+            <input name="passwords[old]" class="form-control" type="password" placeholder="Old Password">
+            <input name="passwords[new]" class="form-control" type="password" placeholder="New Password">
+            <button id="change-password-button" class="btn btn-danger text-uppercase" type="submit">Change Password</button>
+          </form>
+        </nav>
 
-    <!-- Sign-Out-->
-    <div>
-      <form id="sign-out-form" action="">
-        <button id="sign-out-button" class="btn btn-danger text-uppercase" type="submit">Sign-Out</button>
-      </form>
-      </nav>
+        <!-- Sign-Out-->
+        <div>
+          <form id="sign-out-form" action="">
+            <button id="sign-out-button" class="btn btn-danger text-uppercase" type="submit">Sign-Out</button>
+          </form>
+        </div>
+      </div>
     </div>
 
     <div id="create-account-form">

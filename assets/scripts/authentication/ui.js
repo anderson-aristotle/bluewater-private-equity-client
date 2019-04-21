@@ -58,6 +58,7 @@ const signOutSuccess = function () {
     $('#message').text('')
     $('#personal-equity').hide()
   }, 2000)
+  $('.account').hide()
   $('#authenication').show()
   store.user = null
 }

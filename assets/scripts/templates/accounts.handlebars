@@ -1,8 +1,10 @@
 {{#each accounts as |account|}}
 
 <section class="account">
-  <!-- {{account.name}} -->
+  {{account.name}}
   {{account.amount}}
+    {{log account}}
+  <!-- {{#if account.editable}} -->
 
   <form id="update-account-form" data-id="{{account.id}}" class="" action="index.html" method="post">
     <!-- <input type="text" name="name" value="" placeholder="General Fund"> -->
@@ -13,6 +15,9 @@
   <form id="delete-account-button" data-id="{{account.id}}" class="" action="index.html" method="post">
     <button class="btn btn-danger">Delete</button>
   </form>
+
+  <!-- {{/if}} -->
+
 </section>
 
 {{/each}}

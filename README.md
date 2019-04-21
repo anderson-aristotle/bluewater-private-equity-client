@@ -34,7 +34,8 @@ Bluewater, Private Equity
 - [Bluewater, Private Equity](https://imgur.com/akcGLyD)
 
 ## Landing Page
-- [Screen Shot](https://imgur.com/qa5xqJs)
+
+![Image of Screen Shot](https://imgur.com/qa5xqJs)
 
 ## Technology
 

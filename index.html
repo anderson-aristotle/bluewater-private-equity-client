@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Bluewater</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Do not add `link` tags-->
+  <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+  <!-- Do not add `script` tags-->
+  <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+  <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+</head>
+
+<body>
+  <div id="marketing-page">
+    <!--Authenication -->
+    <div id="authenication">
+      <nav class="navbar navbar-inverse">
+        <h2>Bluewater</h2>
+        <!-- Sign-Up -->
+        <form id="sign-up-form">
+          <h4>Sign-Up</h4>
+          <input name="credentials[email]" class="form-control" type="email" placeholder="Email">
+          <input name="credentials[password]" class="form-control" type="password" placeholder="Password">
+          <input name="credentials[password_confirmation]" class="form-control" type="password" placeholder="Confirm Password">
+          <button id="sign-up-button" class="btn btn-danger text-uppercase" type="submit">Sign-Up</button>
+        </form>
+
+        <!-- Sign-In-->
+        <div>
+          <h4>Sign-In</h4>
+          <form id="sign-in-form">
+            <input name="credentials[email]" class="form-control" type="email" placeholder="Email">
+            <input name="credentials[password]" class="form-control" type="password" placeholder="Password">
+            <button id="sign-in-button" class="btn btn-danger text-uppercase" type="submit">Sign-In</button>
+          </form>
+        </div>
+    </div>
+    </nav>
+  </div>
+
+  <!--Change Password-->
+  <div id="personal-equity">
+    <h2>Personal Equity</h2>
+    <div class="d-flex">
+      <div class="ml-auto">
+        <nav class="navbar navbar-inverse p-0 my-2">
+          <form id="change-password-form" class="p-0">
+            <h4>Change Password</h4>
+            <input name="passwords[old]" class="form-control" type="password" placeholder="Old Password">
+            <input name="passwords[new]" class="form-control" type="password" placeholder="New Password">
+            <button id="change-password-button" class="btn btn-danger text-uppercase" type="submit">Change Password</button>
+          </form>
+        </nav>
+
+        <!-- Sign-Out-->
+        <div>
+          <form id="sign-out-form" action="">
+            <button id="sign-out-button" class="btn btn-danger text-uppercase" type="submit">Sign-Out</button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="create-account-form">
+      <!-- Create Investment -->
+      <h5>Invest</h5>
+      <form action="">
+        <label for="class-select"></label>
+
+        <select name="account[name]" id="class-select">
+          <option value=""></option>
+          <option name="account[name]" type="text" value="general fund">General Fund</option>
+        </select>
+        <input required name="account[amount]" type="number" placeholder="Equity Amount">
+        <button class="btn btn-danger text-uppercase">Invest</button>
+      </form>
+    </div>
+
+    <!-- Show Accounts -->
+    <form id="read-account-form" class="account">
+      <button class="btn btn-danger text-uppercase" type="submit">Portfolio</button>
+    </form>
+    <div id="display"></div>
+
+  </div>
+  <div class="content"></div>
+  <div id="message"></div>
+</body>
+
+</html>

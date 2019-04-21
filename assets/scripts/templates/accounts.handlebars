@@ -3,16 +3,15 @@
 <section class="account">
   {{account.name}}
   {{account.amount}}
-    {{log account}}
   <!-- {{#if account.editable}} -->
 
-  <form id="update-account-form" data-id="{{account.id}}" class="" action="index.html" method="post">
-    <!-- <input type="text" name="name" value="" placeholder="General Fund"> -->
+  <!-- <input type="text" name="name" value="" placeholder="General Fund"> -->
+  <form class="update-account-button"data-id="{{account.id}}" action="index.html" method="post">
     <input required type="text" name="amount" value=""placeholder="Amount">
     <button class="btn btn-danger">Update</button>
-  </form>
+    </form>
 
-  <form id="delete-account-button" data-id="{{account.id}}" class="" action="index.html" method="post">
+  <form class="delete-account-button" data-id="{{account.id}}" class="" action="index.html" method="delete">
     <button class="btn btn-danger">Delete</button>
   </form>
 

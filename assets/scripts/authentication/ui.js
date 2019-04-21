@@ -20,8 +20,8 @@ const onSignUpFailure = function () {
 const signInSuccess = function (data) {
   $('#message').text('Signed in successfully')
   store.user = data.user
+  $('form').trigger('reset')
   setTimeout(() => {
-    $('form').trigger('reset')
     $('#message').text('')
     $('#authenication').hide()
   }, 2000)

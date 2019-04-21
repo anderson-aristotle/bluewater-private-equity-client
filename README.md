@@ -35,7 +35,7 @@ Bluewater, Private Equity
 
 ## Landing Page
 
-![Image of Landing Page](landing-page.png)
+![Image of Landing Page](https://i.imgur.com/xwo8hM0.png)
 
 ## Technology
 

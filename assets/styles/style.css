@@ -1,0 +1,22 @@
+
+* {
+    background-color: rgb(100, 175, 222)
+}
+h2 {
+    display: center;
+}
+
+
+/* #sign-up-form,
+#sign-in-form */
+#authenication {
+    grid-gap: 5px;
+    top: 25%;
+    left: 45%;
+    position: fixed;
+    width: 35%;
+}
+
+#authentication-title {
+    align-items: center;
+}

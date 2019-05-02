@@ -16,15 +16,15 @@ h2 {
 }
 
 section {
-    background-color: black;
+    background-color: lightseagreen;
 }
 
 #authentication {
     grid-gap: 5px;
     top: 25%;
-    left: 45%;
+    left: 33%;
     position: fixed;
-    width: 35%;
+    width: 30%;
 }
 
 #sign-out-form {

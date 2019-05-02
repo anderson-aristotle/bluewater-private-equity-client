@@ -23,7 +23,7 @@ const signInSuccess = function (data) {
   $('form').trigger('reset')
   setTimeout(() => {
     $('#message').text('')
-    $('#authenication').hide()
+    $('#authentication').hide()
   }, 2000)
   $('#personal-equity').show()
 }
@@ -59,7 +59,7 @@ const signOutSuccess = function () {
     $('#personal-equity').hide()
   }, 2000)
   $('.account').hide()
-  $('#authenication').show()
+  $('#authentication').show()
   store.user = null
 }
 

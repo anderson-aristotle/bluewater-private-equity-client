@@ -1,15 +1,25 @@
 
 * {
-    background-color: rgb(100, 175, 222)
+    /* background-color: rgb(100, 175, 222) */
 }
+/* body {
+
+} */
+#marketing-page {
+    height: 100vh;
+}
+
+
+
 h2 {
     display: center;
 }
 
+section {
+    background-color: black;
+}
 
-/* #sign-up-form,
-#sign-in-form */
-#authenication {
+#authentication {
     grid-gap: 5px;
     top: 25%;
     left: 45%;
@@ -17,6 +27,14 @@ h2 {
     width: 35%;
 }
 
+#sign-out-form {
+
+}
+
 #authentication-title {
     align-items: center;
+}
+
+#personal-equity {
+    display:
 }
